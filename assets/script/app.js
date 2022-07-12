@@ -11,6 +11,7 @@ $("#random").click(function(event) {
   setImg();
 });
 function setImg() {
+
   fetch(roverQueryURL).then(response => response.json()).then(data => {
     let i = Math.floor(Math.random() * data.photos.length);
     let imgSrc = data.photos[i].img_src;
