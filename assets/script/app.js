@@ -18,20 +18,22 @@ function setImg() {
       setImg();
     } else {
       $("#rover-img").attr("src", imgSrc);
-      $("#rover-name").text("Rover Name: " + data.photos[i].rover.name);
-      $("#solar").text(
-        "Solar date since the rover has landed: " + data.photos[i].sol
-      );
-      $("#earth").text(
-        "Terrestrial date photo was taken: " + data.photos[i].earth_date
-      );
+      $("#rover-name").text("Rover: " + data.photos[i].rover.name);
+      $("#solar").text("Solar date since landed: " + data.photos[i].sol);
+      $("#earth").text("Terrestrial date: " + data.photos[i].earth_date);
     }
   });
 }
 setImg();
 fetch(inSpaceQueryURL).then(response => response.json()).then(data => {
   console.log(data.number);
-  $("#space-number").text(
-    "There are " + data.number + " people currently in space!"
-  );
+  $("#space-number").text(data.number + " people are currently in space");
+  for (i = 0; i < data.number; i++) {
+    let craft = data.people[i].craft;
+    if (craft == "ISS") {
+      $("#iss").append("<li>" + data.people[i].name + "</li>");
+    } else if (craft == "Tiangong") {
+      $("#tss").append("<li>" + data.people[i].name + "</li>");
+    }
+  }
 });
