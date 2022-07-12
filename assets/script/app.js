@@ -7,27 +7,31 @@ let roverQueryURL =
   "&api_key=" +
   roverAPIKey;
 function setImg() {
-  fetch(roverQueryURL).then(response => response.json()).then(data => {
-    let i = Math.floor(Math.random() * data.photos.length);
-    let imgSrc = data.photos[i].img_src;
-    if (imgSrc == "undefined") {
-      setImg();
-    } else {
-      $("#rover-img").attr("src", imgSrc);
-      $("#rover-name").text("Rover Name: " + data.photos[i].rover.name);
-      $("#solar").text(
-        "Solar date since the rover has landed: " + data.photos[i].sol
-      );
-      $("#earth").text(
-        "Terrestrial date photo was taken: " + data.photos[i].earth_date
-      );
-    }
-  });
+  fetch(roverQueryURL)
+    .then((response) => response.json())
+    .then((data) => {
+      let i = Math.floor(Math.random() * data.photos.length);
+      let imgSrc = data.photos[i].img_src;
+      if (imgSrc == "undefined") {
+        setImg();
+      } else {
+        $("#rover-img").attr("src", imgSrc);
+        $("#rover-name").text("Rover Name: " + data.photos[i].rover.name);
+        $("#solar").text(
+          "Solar date since the rover has landed: " + data.photos[i].sol
+        );
+        $("#earth").text(
+          "Terrestrial date photo was taken: " + data.photos[i].earth_date
+        );
+      }
+    });
 }
 setImg();
-fetch(inSpaceQueryURL).then(response => response.json()).then(data => {
-  // console.log(data.number);
-  $("#space-number").text(
-    "There are " + data.number + " people currently in space!"
-  );
-});
+fetch(inSpaceQueryURL)
+  .then((response) => response.json())
+  .then((data) => {
+    // console.log(data.number);
+    $("#space-number").text(
+      "There are " + data.number + " people currently in space!"
+    );
+  });
