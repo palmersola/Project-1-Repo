@@ -6,6 +6,10 @@ let roverQueryURL =
   sol +
   "&api_key=" +
   roverAPIKey;
+$("#random").click(function(event) {
+  event.preventDefault();
+  setImg();
+});
 function setImg() {
   fetch(roverQueryURL).then(response => response.json()).then(data => {
     let i = Math.floor(Math.random() * data.photos.length);
@@ -26,7 +30,7 @@ function setImg() {
 }
 setImg();
 fetch(inSpaceQueryURL).then(response => response.json()).then(data => {
-  // console.log(data.number);
+  console.log(data.number);
   $("#space-number").text(
     "There are " + data.number + " people currently in space!"
   );
