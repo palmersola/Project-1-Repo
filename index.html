@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" class="has-background-grey-darkhsl">
+
+<html lang="en" class="has-background-white-ter">
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -13,35 +15,50 @@
     />
     <link rel="stylesheet" href="assets/style/style.css" />
     <title>Mars Weather</title>
-    <link rel="stylesheet" href="">
+
   </head>
-  <body class="has-background-grey-light">
-    <header class="level">
-      <h1 class="has-text-grey-darkhsl level-item has-text-centered is-size-1 has-text-weight-bold">Welcome To Mars Weather!</h1>
+  <body>
+    <header class="has-background-grey-darker level">
+      <h1 class="has-text-white level-item has-text-centered p-4 is-size-1 has-text-weight-bold">
+
+    
+        Welcome To Mars!
+      </h1>
     </header>
-    <main container max-desktop>
-      
-      <div class="has-text-light has-background-grey-darkhsl" id="mars">
-        <img class="level" id="rover-img" src="" alt="" />
-        <button class="button level" id="btn">Click for random pic!</button>
-      </div>
-        <div class="level" id="facts">
-          <h3 id="rover-name" class="level">curiosity</h3>
-          <h3 id="solar" class="level">solar day</h3>
-          <h3 id="earth" class="level">day on earth</h3>
+    <main class="container is-max-desktop">
+
+      <div class="has-text-light" id="mars">
+
+        <figure class="image">
+          <img class="" id="rover-img" src="" alt="" />
+        </figure>
+        <div class="level">
+          <button class="button level-item" id="random">
+            Click for random pic!
+          </button>
+          <button class="button level-item" id="Save">
+            Save your favorite pic!
+          </button>
         </div>
-      
+      </div>
+
+      <div class="level is-size-5" id="facts">
+
+        <h3 id="rover-name" class="level-item">curiosity</h3>
+        <h3 id="solar" class="level-item">solar day</h3>
+        <h3 id="earth" class="level-item">day on earth</h3>
+      </div>
+
+      <h3 id="space-number">number of poeple in space</h3>
+
       <div class="has-text-light columns" id="space">
-        <h3 id="">number of poeple in space</h3>
         <div class="column">
           <h3>International Space Station</h3>
-          <h4>names</h4>
-          <ul id=""></ul>
+          <ul id="iss"></ul>
         </div>
         <div class="column">
           <h3>Tiangong Space Station</h3>
-          <h4>names</h4>
-          <ul id=""></ul>
+          <ul id="tss"></ul>
         </div>
       </div>
     </main>
