@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
+      rel="icon"
+      type="image/png"
+      href="assets/images/icons8-mars-planet-48.png"
+      sizes="96x96"
+    />
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css"
       integrity="sha512-HqxHUkJM0SYcbvxUw5P60SzdOTy/QVwA1JJrvaXJv4q7lmbDZCmZaqz01UPOaQveoxfYRv1tHozWGPMcuTBuvQ=="
@@ -12,54 +18,103 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="assets/style/style.css" />
-    <title>Mars Weather</title>
+    <link
+      href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css"
+      rel="stylesheet"
+    />
+    <title>Welcome to Mars!</title>
   </head>
   <body>
-    <header class="has-background-grey-darker level">
+    <header class="header has-background-grey-darker level">
       <h1 class="has-text-white level-item has-text-centered p-4 is-size-1">
         Welcome To Mars!
       </h1>
     </header>
-    <main class="container is-max-desktop">
-      <div class="has-text-light" id="mars">
-        <figure class="image">
+    <main class="container is-max-desktop pb-5">
+      <div class="has-text-light box has-background-light" id="mars">
+        <figure class="image box has-background-black">
           <img class="" id="rover-img" src="" alt="" />
         </figure>
-        <div class="level">
-          <button class="button level-item" id="random">
-            Click for random pic!
-          </button>
-          <button class="button level-item" id="Save">
-            Save your favorite pic!
-          </button>
+        <div class="level is-size-5 box" id="facts">
+          <h3 id="rover-name" class="level-item">curiosity</h3>
+          <h3 id="solar" class="level-item">solar day</h3>
+          <h3 id="earth" class="level-item">day on earth</h3>
+        </div>
+
+        <btn class="button box is-fullwidth" id="random">
+          Different photo from this date
+        </btn>
+        <input
+          class="input has-text-centered"
+          type="text"
+          placeholder="Select a new date"
+          id="my_date_picker"
+        />
+
+        <div class="previous-search">
+          <btn
+            class="button has-background-dark has-text-white is-fullwidth"
+            id="0"
+          ></btn>
+          <btn
+            class="button has-background-dark has-text-white is-fullwidth"
+            id="1"
+          ></btn>
+          <btn
+            class="button has-background-dark has-text-white is-fullwidth"
+            id="2"
+          ></btn>
+          <btn
+            class="button has-background-dark has-text-white is-fullwidth"
+            id="3"
+          ></btn>
+          <btn
+            class="button has-background-dark has-text-white is-fullwidth"
+            id="4"
+          ></btn>
         </div>
       </div>
+      <div class="has-background-black pb-3 box">
+        <h3
+          class="has-text-centered is-size-3 has-text-dark has-background-light box"
+          id="space-number"
+        >
+          number of people in space
+        </h3>
 
-      <div class="level is-size-5" id="facts">
-        <h3 id="rover-name" class="level-item">curiosity</h3>
-        <h3 id="solar" class="level-item">solar day</h3>
-        <h3 id="earth" class="level-item">day on earth</h3>
-      </div>
-
-      <h3 class="has-text-centered is-size-3" id="space-number">
-        number of people in space
-      </h3>
-
-      <div
-        class="has-text-light columns has-text-centered has-text-black"
-        id="space"
-      >
-        <div class="column">
-          <h3 class="is-size-4">International Space Station</h3>
-          <ul id="iss"></ul>
-        </div>
-        <div class="column">
-          <h3 class="is-size-4">Tiangong Space Station</h3>
-          <ul id="tss"></ul>
+        <div class="columns has-text-centered has-text-white" id="space">
+          <div class="column">
+            <h3 class="is-size-4 has-text-dark has-background-light box">
+              International Space Station
+            </h3>
+            <ul id="iss"></ul>
+          </div>
+          <div class="column">
+            <h3 class="is-size-4 has-text-dark has-background-light box">
+              Tiangong Space Station
+            </h3>
+            <ul id="tss"></ul>
+          </div>
         </div>
       </div>
     </main>
+    <footer class="footer has-background-grey-darker"></footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="assets/script/app.js"></script>
+    <script src="assets/script/modal.js"></script>
+    <div id="modal" class="modal">
+      <div class="modal-background"></div>
+
+      <div class="modal-content">
+        <div class="box">
+          <p class="is-size-3 has-text-centered">No photos for this date.</p>
+        </div>
+      </div>
+
+      <button class="modal-close is-large" aria-label="close"></button>
+    </div>
   </body>
 </html>
