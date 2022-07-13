@@ -47,7 +47,6 @@ $("#random").click(function(event) {
 function setImg() {
   $.getJSON(roverQueryURL, function(data) {
     let i = Math.floor(Math.random() * data.photos.length);
-    console.log(i);
     if (data.photos.length === 0 && selectorDate === "") {
       console.log("error");
       setDate();
@@ -63,17 +62,22 @@ function setImg() {
   });
 }
 setDate();
-// fetch(inSpaceQueryURL).then(response => response.json()).then(data =>
-$.getJSON(
-  "https://cors-anywhere.herokuapp.com/http://api.open-notify.org/astros.json",
+$.get(
+  "https://api.allorigins.win/get?url=http://api.open-notify.org/astros.json",
   function(data) {
-    $("#space-number").text(data.number + " people are currently in space");
-    for (i = 0; i < data.number; i++) {
-      let craft = data.people[i].craft;
+    $("#space-number").text(
+      JSON.parse(data["contents"])["number"] + " people are currently in space"
+    );
+    for (i = 0; i < JSON.parse(data["contents"])["number"]; i++) {
+      let craft = JSON.parse(data["contents"])["people"][i].craft;
       if (craft == "ISS") {
-        $("#iss").append("<li>" + data.people[i].name + "</li>");
+        $("#iss").append(
+          "<li>" + JSON.parse(data["contents"])["people"][i].name + "</li>"
+        );
       } else if (craft == "Tiangong") {
-        $("#tss").append("<li>" + data.people[i].name + "</li>");
+        $("#tss").append(
+          "<li>" + JSON.parse(data["contents"])["people"][i].name + "</li>"
+        );
       }
     }
   }
