@@ -1,6 +1,5 @@
 const roverAPIKey = "Q7oEuNeavWgiwaPavAuvpRyjlBVQzReLygSbcI3W";
 let roverQueryURL = "";
-let inSpaceQueryURL = "https://api.open-notify.org/astros.json";
 let selectorDate = "";
 let test = "";
 let ls = JSON.parse(localStorage.getItem("Recent Searches"));
@@ -46,7 +45,7 @@ $("#random").click(function(event) {
   setImg();
 });
 function setImg() {
-  fetch(roverQueryURL).then(response => response.json()).then(data => {
+  $.getJSON(roverQueryURL, function(data) {
     let i = Math.floor(Math.random() * data.photos.length);
     console.log(i);
     if (data.photos.length === 0 && selectorDate === "") {
@@ -64,7 +63,8 @@ function setImg() {
   });
 }
 setDate();
-fetch(inSpaceQueryURL).then(response => response.json()).then(data => {
+// fetch(inSpaceQueryURL).then(response => response.json()).then(data =>
+$.getJSON("http://api.open-notify.org/astros.json?callback=?", function(data) {
   $("#space-number").text(data.number + " people are currently in space");
   for (i = 0; i < data.number; i++) {
     let craft = data.people[i].craft;
