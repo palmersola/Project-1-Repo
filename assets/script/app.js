@@ -64,17 +64,20 @@ function setImg() {
 }
 setDate();
 // fetch(inSpaceQueryURL).then(response => response.json()).then(data =>
-$.getJSON("http://api.open-notify.org/astros.json?callback=?", function(data) {
-  $("#space-number").text(data.number + " people are currently in space");
-  for (i = 0; i < data.number; i++) {
-    let craft = data.people[i].craft;
-    if (craft == "ISS") {
-      $("#iss").append("<li>" + data.people[i].name + "</li>");
-    } else if (craft == "Tiangong") {
-      $("#tss").append("<li>" + data.people[i].name + "</li>");
+$.getJSON(
+  "https://cors-anywhere.herokuapp.com/http://api.open-notify.org/astros.json",
+  function(data) {
+    $("#space-number").text(data.number + " people are currently in space");
+    for (i = 0; i < data.number; i++) {
+      let craft = data.people[i].craft;
+      if (craft == "ISS") {
+        $("#iss").append("<li>" + data.people[i].name + "</li>");
+      } else if (craft == "Tiangong") {
+        $("#tss").append("<li>" + data.people[i].name + "</li>");
+      }
     }
   }
-});
+);
 $(function() {
   $("#my_date_picker").datepicker({
     dateFormat: "yy-mm-dd",
