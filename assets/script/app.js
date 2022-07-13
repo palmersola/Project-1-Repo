@@ -10,7 +10,7 @@ if (ls === null) {
     "Previous Date",
     "Previous Date",
     "Previous Date",
-    "Previous Date"
+    "Previous Date",
   ];
 } else {
   recentSearches = ls;
@@ -40,12 +40,12 @@ function setDate(btn) {
     roverAPIKey;
   setImg();
 }
-$("#random").click(function(event) {
+$("#random").click(function (event) {
   event.preventDefault();
   setImg();
 });
 function setImg() {
-  $.getJSON(roverQueryURL, function(data) {
+  $.getJSON(roverQueryURL, function (data) {
     let i = Math.floor(Math.random() * data.photos.length);
     if (data.photos.length === 0 && selectorDate === "") {
       console.log("error");
@@ -62,6 +62,7 @@ function setImg() {
   });
 }
 setDate();
+
 $.get(
   "https://api.allorigins.win/get?url=http://api.open-notify.org/astros.json",
   function(data) {
@@ -70,6 +71,7 @@ $.get(
     );
     for (i = 0; i < JSON.parse(data["contents"])["number"]; i++) {
       let craft = JSON.parse(data["contents"])["people"][i].craft;
+
       if (craft == "ISS") {
         $("#iss").append(
           "<li>" + JSON.parse(data["contents"])["people"][i].name + "</li>"
@@ -82,16 +84,16 @@ $.get(
     }
   }
 );
-$(function() {
+$(function () {
   $("#my_date_picker").datepicker({
     dateFormat: "yy-mm-dd",
     minDate: "2012-08-06",
     maxDate: "0D",
     changeMonth: true,
-    changeYear: true
+    changeYear: true,
   });
 });
-$("#my_date_picker").change(function(event) {
+$("#my_date_picker").change(function (event) {
   event.preventDefault();
   let input = $("#my_date_picker").val();
   setDate(input);
@@ -104,7 +106,7 @@ $("#my_date_picker").change(function(event) {
     $("#" + i).text(recentSearches[i]);
   }
 });
-$(".previous-search").click(function(event) {
+$(".previous-search").click(function (event) {
   event.preventDefault();
   setDate($("#" + event.target.id).text());
 });
