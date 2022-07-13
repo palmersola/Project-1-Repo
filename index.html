@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
 <html lang="en" class="has-background-white-ter">
-
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -15,20 +14,15 @@
     />
     <link rel="stylesheet" href="assets/style/style.css" />
     <title>Mars Weather</title>
-
   </head>
   <body>
-    <header class="has-background-grey-darker level">
+    <header class="has-background-black-ter level">
       <h1 class="has-text-white level-item has-text-centered p-4 is-size-1">
-
-    
         Welcome To Mars!
       </h1>
     </header>
     <main class="container is-max-desktop">
-
       <div class="has-text-light" id="mars">
-
         <figure class="image">
           <img class="" id="rover-img" src="" alt="" />
         </figure>
@@ -43,22 +37,27 @@
       </div>
 
       <div class="level is-size-5" id="facts">
-
         <h3 id="rover-name" class="level-item">curiosity</h3>
         <h3 id="solar" class="level-item">solar day</h3>
         <h3 id="earth" class="level-item">day on earth</h3>
       </div>
 
-      <h3 id="space-number">number of poeple in space</h3>
-
-      <div class="has-text-light columns" id="space">
-        <div class="column">
-          <h3>International Space Station</h3>
-          <ul id="iss"></ul>
-        </div>
-        <div class="column">
-          <h3>Tiangong Space Station</h3>
-          <ul id="tss"></ul>
+      <div class="container has-background-grey-dark has-text-white">
+        <h3 class="has-text-centered is-size-3" id="space-number">
+          number of poeple in space
+        </h3>
+        <div
+          class="has-text-light columns has-text-centered has-text-white"
+          id="space"
+        >
+          <div class="column">
+            <h3 class="is-size-4">International Space Station</h3>
+            <ul id="iss"></ul>
+          </div>
+          <div class="column">
+            <h3 class="is-size-4">Tiangong Space Station</h3>
+            <ul id="tss"></ul>
+          </div>
         </div>
       </div>
     </main>
