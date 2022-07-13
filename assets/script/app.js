@@ -1,6 +1,6 @@
 const roverAPIKey = "Q7oEuNeavWgiwaPavAuvpRyjlBVQzReLygSbcI3W";
 let roverQueryURL = "";
-let inSpaceQueryURL = "http://api.open-notify.org/astros.json";
+let inSpaceQueryURL = "https://api.open-notify.org/astros.json";
 let selectorDate = "";
 let test = "";
 let ls = JSON.parse(localStorage.getItem("Recent Searches"));
@@ -35,7 +35,7 @@ function setDate(btn) {
     earthDate = selectorDate;
   }
   roverQueryURL =
-    "http://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=" +
+    "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=" +
     earthDate +
     "&api_key=" +
     roverAPIKey;
