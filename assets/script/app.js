@@ -64,7 +64,7 @@ function setDate(btn) {
   setImg();
 }
 function setImg() {
-  $.getJSON(roverQueryURL, function(data) {
+  $.getJSON(roverQueryURL, function (data) {
     let i = Math.floor(Math.random() * data.photos.length);
     if (data.photos.length === 0 && selectorDate === "") {
       setDate();
@@ -79,7 +79,6 @@ function setImg() {
   });
 }
 setDate();
-$(function() {
   $.get(
     "https://api.allorigins.win/get?url=http://api.open-notify.org/astros.json",
     function(data) {
@@ -101,4 +100,3 @@ $(function() {
       }
     }
   );
-});
