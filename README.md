@@ -32,7 +32,7 @@ https://api.nasa.gov/
 https://bulma.io/
 
 ## Screenshots
-
+<img src"assets\photos\Weather-Dashboard-Img.png" />
 ![screenshot]()
 
 ## link to deployed application
