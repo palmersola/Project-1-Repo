@@ -2,7 +2,9 @@
 
 When the user enters the webpage they're given a title "Welcome To Mars".
 
+
 The user is given a random image from our Mars Rover Photos NASA API with given data.. which rover took the photo, the solar date since it had landed and the earth date (terrestrial date).
+
 
 The user has the ability to browse random photos from the given date of the first photo shown if they click the button "Different photo from this date".
 
@@ -22,19 +24,17 @@ Hope you enjoy!
 
 We Used two API's & a CSS frame work
 
-(Peopole in space API)
-http://open-notify.org/Open-Notify-API/People-In-Space/
 
-(Mars Rover Photos API)
-https://api.nasa.gov/
+(People in Space API) http://open-notify.org/Open-Notify-API/People-In-Space/
 
-(Bulma)
-https://bulma.io/
+(Mars Rover Photos API) https://api.nasa.gov/
+
+(Bulma) https://bulma.io/
 
 ## Screenshots
-<img src"assets\photos\Weather-Dashboard-Img.png" />
-![screenshot]()
 
-## link to deployed application
+<img src="assets\images\WelcomeToMars.png" alt="">
+
+link to deployed application
 
 https://palmersola.github.io/Project-1-Repo/
