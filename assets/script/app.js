@@ -64,7 +64,7 @@ function setDate(btn) {
   setImg();
 }
 function setImg() {
-  $.getJSON(roverQueryURL, function(data) {
+  $.getJSON(roverQueryURL, function (data) {
     let i = Math.floor(Math.random() * data.photos.length);
     if (data.photos.length === 0 && selectorDate === "") {
       setDate();
@@ -79,23 +79,25 @@ function setImg() {
   });
 }
 setDate();
-$.get(
-  "https://api.allorigins.win/get?url=http://api.open-notify.org/astros.json",
-  function(data) {
-    $("#space-number").text(
-      JSON.parse(data["contents"])["number"] + " people are currently in space"
-    );
-    for (i = 0; i < JSON.parse(data["contents"])["number"]; i++) {
-      let craft = JSON.parse(data["contents"])["people"][i].craft;
-      if (craft == "ISS") {
-        $("#iss").append(
-          "<li>" + JSON.parse(data["contents"])["people"][i].name + "</li>"
-        );
-      } else if (craft == "Tiangong") {
-        $("#tss").append(
-          "<li>" + JSON.parse(data["contents"])["people"][i].name + "</li>"
-        );
+  $.get(
+    "https://api.allorigins.win/get?url=http://api.open-notify.org/astros.json",
+    function(data) {
+      $("#space-number").text(
+        JSON.parse(data["contents"])["number"] +
+          " people are currently in space"
+      );
+      for (i = 0; i < JSON.parse(data["contents"])["number"]; i++) {
+        let craft = JSON.parse(data["contents"])["people"][i].craft;
+        if (craft == "ISS") {
+          $("#iss").append(
+            "<li>" + JSON.parse(data["contents"])["people"][i].name + "</li>"
+          );
+        } else if (craft == "Tiangong") {
+          $("#tss").append(
+            "<li>" + JSON.parse(data["contents"])["people"][i].name + "</li>"
+          );
+        }
       }
     }
-  }
-);
+  );
+
